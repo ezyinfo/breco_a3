@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <!-- FIXME: Add meta desc for SEO -->
     <title>Breco</title>
 </head>
 
@@ -24,27 +25,36 @@
     <main>
         <h2>Vous recherchez</h2>
         <div id="search-panel" class="shadow">
-            <div class="search">
+            <!-- The search panel shows to lines separated by a line and time difference -->
+            <div class="search"> <!-- First line: From -->
                 <div class="search-loc">
-                    <h3>Depuis</h3>
-                    <input type="text" value="Vignoc">
+                    <label for="from-loc-input"> <!-- We need a label for input (accessibility) -->
+                        <h3>Depuis</h3>
+                    </label>
+                    <input id="from-loc-input" type="text" value="Vignoc">
                 </div>
                 <div class="search-time">
-                    <h3>À</h3>
-                    <input type="text" value="07:43" class="evaluate">
+                    <label for="from-time-input">
+                        <h3>À</h3>
+                    </label>
+                    <input id="from-time-input" type="text" value="07:43" class="evaluate">
                 </div>
             </div>
             <div class="separator">
                 <p>+ 17 min</p>
             </div>
-            <div class="search">
+            <div class="search"> <!-- Second line: To -->
                 <div class="search-loc">
-                    <h3>Vers</h3>
-                    <input type="text" value="Rennes">
+                    <label for="to-loc-input"> <!-- We need a label for input (accessibility) -->
+                        <h3>Vers</h3>
+                    </label>
+                    <input id="to-loc-input" type="text" value="Rennes">
                 </div>
                 <div class="search-time">
-                    <h3>À</h3>
-                    <input type="text" value="08:00">
+                    <label for="to-time-input">
+                        <h3>À</h3>
+                    </label>
+                    <input id="to-time-input" type="text" value="08:00">
                 </div>
             </div>
         </div>
@@ -68,7 +78,7 @@
 
     </main>
 
-
+    <!-- No footer for this project -->
 </body>
 
 </html>

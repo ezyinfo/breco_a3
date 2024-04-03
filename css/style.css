@@ -5,8 +5,10 @@
     --primary-color: #246EF0;
     --primary-color-dark: #133B80;
     --light-gray: #888;
+    --green-label: #5A7F06;
 }
 
+/** Fonts */
 @font-face {
     font-family: 'agencyFb';
     src: url('../assets/fonts/agencyfb_reg.ttf') format('truetype');
@@ -17,6 +19,7 @@
     src: url('../assets/fonts/agencyfb_bold.ttf') format('truetype');
 }
 
+
 body {
     margin: 0;
     height: 100vh;
@@ -26,6 +29,7 @@ body {
     flex-direction: column;
 }
 
+/** Some Resets */
 h1,
 h2,
 h3,
@@ -42,6 +46,26 @@ li {
     list-style: none;
 }
 
+/** Some general settings */
+.shadow {
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px #AAA;
+}
+
+
+.cta_butt {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    font-family: 'agencyFb';
+    font-size: 1.25em;
+    border-radius: 1.25em;
+    border: none;
+    box-shadow: 5px 5px 0 var(--primary-color-dark);
+}
+
+/** Header */
 header,
 main {
     position: relative;
@@ -73,6 +97,7 @@ header #banner {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+/** Main block */
 main {
     flex: 1;
     display: flex;
@@ -87,6 +112,7 @@ main {
     background-color: #F6F6F6;
 }
 
+/** Search specifics */
 #search-panel {
     display: flex;
     flex-direction: column;
@@ -94,32 +120,30 @@ main {
 
 }
 
-.shadow {
-    border-radius: 5px;
-    box-shadow: 5px 5px 20px #AAA;
-}
-
 .evaluate {
+    /* For evaluated time (vs. user declared) */
     color: var(--light-gray);
 }
 
 #search-panel h3 {
-    color: #7AAB07;
-}
-
-input {
-    background-color: #FFFF;
-    border: none;
-    font-family: inherit;
-    font-size: inherit;
-    font-size: 2rem;
-    width: 100%;
+    color: var(--green-label);
 }
 
 .search {
     display: flex;
     justify-content: space-between;
     margin: var(--default-margin);
+}
+
+.search input {
+    /* More specific declarations */
+    background-color: #FFFF;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-size: 2rem;
+    width: 100%;
+    font-family: 'agencyFb', sans-serif;
 }
 
 .search>div {
@@ -146,14 +170,11 @@ input {
 
 .search-loc {
     flex: 3;
+    /* grows 3 times faster than time */
 }
 
 .search-time {
     flex: 1;
-}
-
-.search-time input {
-    font-family: 'agencyFb', sans-serif;
 }
 
 #search-days {
@@ -178,16 +199,4 @@ input {
 
 #search-days li a.active {
     color: var(--primary-color);
-}
-
-.cta_butt {
-    background-color: var(--primary-color);
-    color: white;
-    width: 100%;
-    padding: 10px;
-    font-family: 'agencyFb';
-    font-size: 1.25em;
-    border-radius: 1.25em;
-    border: none;
-    box-shadow: 5px 5px 0 var(--primary-color-dark);
 }
