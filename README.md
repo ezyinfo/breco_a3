@@ -19,4 +19,4 @@ INSERT INTO `locations` (`id`, `location`) VALUES (NULL, 'Rennes'), (NULL, 'Sain
 
 # Usage
 
-
+Just visit index.html and enter destination value
