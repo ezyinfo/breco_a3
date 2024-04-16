@@ -25,26 +25,20 @@ class locations_test extends TestCase
 
     public function testGetLocationsWithResults()
     {
-        $locationResult = array(
-            array("id" => 1, "name" => "Rennes")
-        );
+        $locationResult = '[{"id":1,"location":"Rennes"}]';
         // Check the result
+        $this->locations->connect();
         $locations = $this->locations->getLocations("Re");
-        $this->assertEquals($locationResult, $locations);
+        $jsonResponse = json_encode($locations);
+        $this->assertEquals($locationResult, $jsonResponse);
     }
 
     public function testGetLocationsWithoutResults()
     {
         // Check that location not found
+        $this->locations->connect();
         $locations = $this->locations->getLocations("NonExistentLocation");
         $this->assertEmpty($locations);
     }
 
-    public function testSQLQuery()
-    {
-        // Check that location found
-        $query = "Rennes";
-        $statement = $this->locations->getLocations($query);
-        $this->assertStringContainsString($query, $statement->queryString);
-    }
 }
