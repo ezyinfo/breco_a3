@@ -20,3 +20,10 @@ INSERT INTO `locations` (`id`, `location`) VALUES (NULL, 'Rennes'), (NULL, 'Sain
 # Usage
 
 Just visit index.html and enter destination value
+
+# Test
+
+To test, you need phpunit.
+On Linux, just install phpunit via sudo apt install phpunit
+Then, execute test by calling :
+$ phpunit tests/locations_test.php
