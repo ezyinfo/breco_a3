@@ -1,6 +1,6 @@
 <?php
-
-include "inc/locations.php";
+require "inc/config.php";
+require "inc/locations.php";
 
 /* For debug purpose only */
 ini_set('display_errors', 1);
@@ -16,7 +16,7 @@ if (!preg_match('/^[a-zA-Z0-9\-]+$/', $query)) {
     die("Wrong query.");
 }
 
-$locations = new Locations();
+$locations = new Locations($mysql_host, $mysql_user, $mysql_pwd, $mysql_dbname);
 if (!$locations->connect()) {
     die("Failed to connect");
 }
